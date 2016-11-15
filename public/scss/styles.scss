@@ -1,0 +1,239 @@
+$item_width: 300px;
+$sidebar_width: 300px;
+$color_primary: #f5f5f5;
+$color_secondary: #fff;
+$color_link: #81c483;
+$anim-time: 0.5s;
+
+@import "partials/mapbox";
+
+// @import "compass/css3";
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
+
+#info {
+     display: block;
+     position: relative;
+     margin: 0px auto;
+     width: 50%;
+     padding: 10px;
+     border: none;
+     border-radius: 3px;
+     font-size: 12px;
+     text-align: center;
+     color: #222;
+     background: #fff;
+ }
+
+.map-overlay {
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.10);
+    border-radius: 3px;
+    position: absolute;
+    width: 25%;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    display: none;
+}
+
+a { color: black }
+.wrapper{
+  height: 100%;
+  background-image: url(http://static2.apartmentshowcase.com/stylesheets/css/images/temp/intro.jpg);
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.menu {
+  @extend .absolute-center;
+  width: 5em;
+  height: 5em;
+  margin-top: -100px;
+
+  .btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(255,255,255, 0.15);
+    opacity: 0;
+    z-index: -10;
+    cursor: pointer;
+    transition: opacity 1s, z-index 0.3s, transform 1s;
+    transform: translateX(0);
+
+    .fa {
+      @extend .absolute-center;
+      font-size: 1.5em;
+      transition: color 0.3s;
+    }
+
+    &:hover .fa {
+      color: #10e1fc;
+    }
+
+    &.trigger {
+      opacity: 1;
+      z-index: 100;
+      cursor: pointer;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+
+        .line {
+          // background-color: rgba(255,255,255, 0.7);
+
+          &:before, &:after {
+            // background-color: rgba(255,255,255, 0.7);
+          }
+        }
+      }
+
+      .line {
+        @extend .absolute-center;
+        width: 40%;
+        height: 6px;
+        background: #000;
+        border-radius: 6px;
+        transition: background-color 0.3s, height 0.3s, top 0.3s;
+
+        &:before, &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 6px;
+          background: #000;
+          border-radius: 6px;
+          transition: background-color 0.3s, transform 0.3s;
+        }
+        &:before {
+          top: -10px;
+          transform-origin: 15% 100%;
+        }
+        &:after {
+          top: 10px;
+          transform-origin: 25% 30%;
+        }
+      }
+    }
+  }
+
+  .rotater {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: 50% 50%;
+  }
+
+  &.active {
+
+    .btn-icon {
+      opacity: 1;
+      z-index: 50;
+    }
+
+    .trigger {
+
+      .line {
+        height: 0px;
+        top: 45%;
+
+        &:before {
+          transform: rotate(45deg);
+          width: 110%;
+          top: -7px;
+        }
+        &:after {
+          transform: rotate(-45deg);
+          width: 110%;
+        }
+      }
+    }
+  }
+}
+
+$numOfElems: 8;
+
+@for $i from 1 through $numOfElems {
+  $deg: 360deg / $numOfElems;
+  .rotater:nth-child(#{$i}) {
+    transform: rotate($deg/-2 + $deg * ($i - 1));
+  }
+
+  .menu.active {
+    .rotater:nth-child(#{$i}) .btn-icon {
+      transform: translateY(-10em) rotate($deg/2 - $deg * ($i - 1));
+    }
+  }
+}
+
+#buttons {
+    width: 90%;
+    margin: 0 auto;
+}
+.button {
+    display: block;
+    transform: translateX(-20%) translateY(100%);
+    position: relative;
+    cursor: pointer;
+    width: 20%;
+    padding: 8px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #ee8a65;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.close-button {
+	position: absolute;
+	border: none;
+	background: none;
+	margin: 0;
+	z-index: 100;
+	top: 0;
+	right: 0;
+	font-size: 18px;
+	color: #000;
+	cursor: pointer;
+	padding: 20px 30px;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.close-button:hover {
+	color: #7b7b7b;
+}
+
+.mapboxgl-popup-close-button{
+  padding: 5px;
+}
+
+.mapboxgl-popup-content h1{
+  margin-bottom: 20px;
+}
