@@ -94,16 +94,4 @@
       map.flyTo(listings[$topCard.attr("id")]);
     }
 
-
-    // function setActiveListing(listingName) {
-    //     if (listingName === activeListingName) return;
-    //
-    //     map.flyTo(listings[listingName]);
-    //
-    //     document.getElementById(listingName).setAttribute('class', 'active');
-    //     document.getElementById(activeListingName).setAttribute('class', '');
-    //
-    //     activeListingName = listingName;
-    // }
-
 })();
