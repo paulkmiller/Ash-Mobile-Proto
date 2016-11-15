@@ -17,19 +17,6 @@
             .addTo(map);
     }
 
-    function toolTipAdd(center) {
-        var popup = new mapboxgl.Popup({
-                closeOnClick: false
-            })
-            .setLngLat(center)
-            .setHTML('<h1>Hello World!</h1>')
-            .addTo(map);
-    }
-
-    $('.marker').on('click', function() {
-        toolTipAdd(center);
-    });
-
 
     //////////////////////////////////////////////////////////
     ///// GeoJSON for Listing Placement + Tooltip Info ///////
@@ -79,71 +66,64 @@
     });
 
 
-    //////////////////////////////////////////////////////////
-    ///////// Populates Tooltips Using Above Data ////////////
-    //////////////////////////////////////////////////////////
-
-    map.on('click', function(e) {
-        var features = map.queryRenderedFeatures(e.point, {
-            layers: ['listings']
-        });
-
-        if (!features.length) {
-            return;
-        }
-
-        var feature = features[0];
-
-        // Populate the popup and set its coordinates
-        // based on the feature found.
-        var popup = new mapboxgl.Popup()
-            .setLngLat(feature.geometry.coordinates)
-            .setHTML(feature.properties.description)
-            .addTo(map);
-    });
-
-
-    // On every scroll event, check which element is on screen
-    // window.onscroll = function() {
-    //     var listingNames = Object.keys(listings);
-    //     for (var i = 0; i < listingNames.length; i++) {
-    //         var listingName = listingNames[i];
-    //         if (isElementOnScreen(listingName)) {
-    //             setActiveListing(listingName);
-    //             break;
-    //         }
-    //     }
-    // };
-
     // establish Swing variables and intialize card functionality
-    var stack;
+    var stack = gajus.Swing.Stack();
     var listingsArray = []
 
-    stack = gajus.Swing.Stack();
-
-    listingsArray.forEach.call(document.querySelectorAll('.stack li'), function (targetElement) {
+    listingsArray.forEach.call($('.listings li'), function (targetElement) {
         stack.createCard(targetElement);
-
         targetElement.classList.add('in-deck');
     });
 
 
-    // On every card swipe, update classList
+    // stack.on('throwout', function (e) {
+    //   if ($(".listings li").last('.in-deck') == 'true'){
+    //     $.when(updateDeck()).then(checkDeck());
+    //   }
+    //   else {
+    //     console.log("shit");
+    //   }
+    // });
+
+    //
     stack.on('throwout', function (e) {
         e.target.classList.remove('in-deck');
-        var listingNames = Object.keys(listings);
-        for (var i = 0; i < listingNames.length; i++) {
-            var listingName = listingNames[i];
-            if (isElementOnScreen(listingName)) {
-                setActiveListing(listingName);
-                break;
-            }
-        }
+        checkDeck();
     });
+    //
+    // stack.on('throwin', function (e) {
+    //     e.target.classList.add('in-deck');
+    // });
 
-    stack.on('throwin', function (e) {
-        e.target.classList.add('in-deck');
-    });
+
+    // On every card swipe, update classList
+    function updateDeck(){
+       e.target.classList.remove('in-deck');
+      };
+
+    function checkDeck(){
+      $(".listings li").last('.in-deck').css("background-color", "red");
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     var activeListingName = 'welcome';
@@ -157,12 +137,6 @@
         document.getElementById(activeListingName).setAttribute('class', '');
 
         activeListingName = listingName;
-    }
-
-    function isElementOnScreen(id) {
-        var element = document.getElementById(id);
-        var bounds = element.getBoundingClientRect();
-        return bounds.top < window.innerHeight && bounds.bottom > 0;
     }
 
 })();
