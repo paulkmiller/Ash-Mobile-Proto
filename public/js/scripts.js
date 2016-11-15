@@ -1,12 +1,10 @@
 (function() {
-
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/light-v9',
         center: [-77.356746, 38.957575],
         zoom: 12
     });
-
 
     function add_point_to_map(center) {
         var el = document.createElement('div');
@@ -17,13 +15,11 @@
             .addTo(map);
     }
 
-
     //////////////////////////////////////////////////////////
     ///// GeoJSON for Listing Placement + Tooltip Info ///////
     //////////////////////////////////////////////////////////
 
     var markerPoints = []
-
     function coordinateToMarkerPoint(description, long, lat) {
         return {
             "type": "Feature",
@@ -69,8 +65,11 @@
     // establish Swing variables and intialize card functionality
     var stack = gajus.Swing.Stack();
     var listingsArray = []
-    var ul = $('.listings'); // your parent ul element
+    var ul = $('.listings');
+    var activeListingName = 'welcome';
 
+
+    // revert the ul li order since Swing displays them last to first
     ul.children().each(function(i,li){ul.prepend(li)})
 
     listingsArray.forEach.call($('.listings li'), function (targetElement) {
@@ -90,13 +89,11 @@
     });
 
     function checkDeck(target) {
-      $('.listings').find('li.in-deck').not($(target)).last().css("background-color", "red");
+      var $topCard = $('.listings').find('li.in-deck').not($(target)).last()
+      $topCard.css("background-color", "red");
+      map.flyTo(listings[$topCard.attr("id")]);
     }
 
-
-
-
-    var activeListingName = 'welcome';
 
     function setActiveListing(listingName) {
         if (listingName === activeListingName) return;
