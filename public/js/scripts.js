@@ -104,16 +104,16 @@
 
 
     // On every scroll event, check which element is on screen
-    window.onscroll = function() {
-        var listingNames = Object.keys(listings);
-        for (var i = 0; i < listingNames.length; i++) {
-            var listingName = listingNames[i];
-            if (isElementOnScreen(listingName)) {
-                setActiveListing(listingName);
-                break;
-            }
-        }
-    };
+    // window.onscroll = function() {
+    //     var listingNames = Object.keys(listings);
+    //     for (var i = 0; i < listingNames.length; i++) {
+    //         var listingName = listingNames[i];
+    //         if (isElementOnScreen(listingName)) {
+    //             setActiveListing(listingName);
+    //             break;
+    //         }
+    //     }
+    // };
 
     // establish Swing variables and intialize card functionality
     var stack;
@@ -131,6 +131,14 @@
     // On every card swipe, update classList
     stack.on('throwout', function (e) {
         e.target.classList.remove('in-deck');
+        var listingNames = Object.keys(listings);
+        for (var i = 0; i < listingNames.length; i++) {
+            var listingName = listingNames[i];
+            if (isElementOnScreen(listingName)) {
+                setActiveListing(listingName);
+                break;
+            }
+        }
     });
 
     stack.on('throwin', function (e) {
