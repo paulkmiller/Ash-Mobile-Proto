@@ -76,52 +76,19 @@
     });
 
 
-    // stack.on('throwout', function (e) {
-    //   if ($(".listings li").last('.in-deck') == 'true'){
-    //     $.when(updateDeck()).then(checkDeck());
-    //   }
-    //   else {
-    //     console.log("shit");
-    //   }
-    // });
-
-    //
     stack.on('throwout', function (e) {
-        e.target.classList.remove('in-deck');
-        checkDeck();
+      var target = e.target
+      target.classList.remove('in-deck');
+      checkDeck(target);
     });
-    //
-    // stack.on('throwin', function (e) {
-    //     e.target.classList.add('in-deck');
-    // });
 
+    stack.on('throwin', function (e) {
+        e.target.classList.add('in-deck');
+    });
 
-    // On every card swipe, update classList
-    function updateDeck(){
-       e.target.classList.remove('in-deck');
-      };
-
-    function checkDeck(){
-      $(".listings li").last('.in-deck').css("background-color", "red");
+    function checkDeck(target) {
+      $('.listings').find('li.in-deck').not($(target)).last().css("background-color", "red");
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
