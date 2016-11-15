@@ -69,6 +69,9 @@
     // establish Swing variables and intialize card functionality
     var stack = gajus.Swing.Stack();
     var listingsArray = []
+    var ul = $('.listings'); // your parent ul element
+
+    ul.children().each(function(i,li){ul.prepend(li)})
 
     listingsArray.forEach.call($('.listings li'), function (targetElement) {
         stack.createCard(targetElement);
