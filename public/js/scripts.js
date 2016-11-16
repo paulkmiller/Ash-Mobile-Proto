@@ -63,10 +63,20 @@
 
 
     // establish Swing variables and intialize card functionality
-    var stack = gajus.Swing.Stack();
     var listingsArray = []
     var ul = $('.listings');
     var activeListingName = 'welcome';
+
+    var config = {
+      minThrowOutDistance: 1000,
+      maxThrowOutDistance: 1000,
+      maxRotation: 0,
+      throwOutConfidence: function(offset, element) {
+        return Math.min(Math.abs(offset) / (element.offsetWidth / ((1+5**.5)/2)), 1); // Fix dropout distance by dividing by 2
+      },
+    }
+
+    var stack = gajus.Swing.Stack(config);
 
 
     // revert the ul li order since Swing displays them last to first
@@ -82,11 +92,13 @@
       var target = e.target
       target.classList.remove('in-deck');
       nextCard(target);
+
     });
 
     stack.on('throwin', function (e) {
         e.target.classList.add('in-deck');
     });
+
 
     function nextCard(target) {
       var $topCard = $('.listings').find('li.in-deck').not($(target)).last()

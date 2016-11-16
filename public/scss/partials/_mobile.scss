@@ -9,14 +9,12 @@
 
 @media all and (max-width: 420px) {
   /* phones */
-  li#welcome { background-color: red; }
-
   .viewport {
     .listings {
       width: 90%;
       height: 33%;
       position: absolute;
-      bottom: 50px;
+      bottom: 30px;
       left: 50%;
       margin-left: -45%;
       border-radius: 10px;

@@ -22,24 +22,6 @@
 #map {
   position: fixed;
 }
-#features, .features_welcome {
-  font-family: sans-serif;
-  section{
-    padding:  25px 50px;
-    line-height: 25px;
-    border-bottom: 1px solid #ddd;
-    opacity: 0.25;
-    font-size: 13px;
-    &.active{
-      opacity: 1;
-      color: black;
-    }
-    &:last-child{
-      border-bottom: none;
-      margin-bottom: 700px;
-    }
-  }
-}
 
 .marker {
   height: 20px;

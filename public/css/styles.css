@@ -27,21 +27,6 @@ html, body {
 #map {
   position: fixed; }
 
-#features, .features_welcome {
-  font-family: sans-serif; }
-  #features section, .features_welcome section {
-    padding: 25px 50px;
-    line-height: 25px;
-    border-bottom: 1px solid #ddd;
-    opacity: 0.25;
-    font-size: 13px; }
-    #features section.active, .features_welcome section.active {
-      opacity: 1;
-      color: black; }
-    #features section:last-child, .features_welcome section:last-child {
-      border-bottom: none;
-      margin-bottom: 700px; }
-
 .marker {
   height: 20px;
   width: 20px;
@@ -78,20 +63,26 @@ html, body {
 body {
   font: normal 16px/24px 'Helvetica Neue', Helvetica, Arial, freesans, sans-serif; }
 
-button, input, code {
-  display: inline-block;
-  outline: none;
-  font: inherit;
-  border: none;
-  background: #FDE991;
-  padding: 0; }
+#home .card-header {
+  background-image: url("../img/image-1.jpg"); }
 
-button {
-  color: #C7433E;
-  cursor: pointer; }
+#welcome .card-header {
+  background-image: url("../img/image-2.jpg"); }
 
-input {
-  width: 50px; }
+#listing1 .card-header {
+  background-image: url("../img/image-3.jpg"); }
+
+#listing2 .card-header {
+  background-image: url("../img/image-4.jpg"); }
+
+#listing3 .card-header {
+  background-image: url("../img/image-5.jpg"); }
+
+#listing4 .card-header {
+  background-image: url("../img/image-6.jpg"); }
+
+#listing5 .card-header {
+  background-image: url("../img/image-7.jpg"); }
 
 .viewport {
   position: relative;
@@ -105,6 +96,24 @@ input {
     left: 50%;
     margin-left: -100px;
     border-radius: 10px; }
+    .viewport .listings .card, .viewport .listings .card section {
+      height: 100%; }
+      .viewport .listings .card .card-header, .viewport .listings .card section .card-header {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%; }
+    .viewport .listings .card-content {
+      height: 30%;
+      padding: 10px;
+      margin-top: -20%;
+      color: white;
+      background: rgba(0, 0, 0, 0.5); }
+      .viewport .listings .card-content article p {
+        color: rgba(255, 255, 255, 0.75); }
+    .viewport .listings section {
+      line-height: 25px;
+      font-size: 13px; }
   .viewport li {
     width: 200px;
     height: 300px;
@@ -120,10 +129,6 @@ input {
     font-size: 1em;
     box-sizing: border-box;
     cursor: default; }
-    .viewport li.clubs, .viewport li.spades {
-      color: #373737; }
-    .viewport li.diamonds, .viewport li.hearts {
-      color: #ED5D52; }
     .viewport li.in-deck:nth-child(3) {
       top: 2px;
       transform: translate(2px, 2px) rotate(0.4deg); }
@@ -131,51 +136,17 @@ input {
       top: 4px;
       transform: translate(-4px, -2px) rotate(-1deg); }
 
-#control {
-  position: absolute;
-  bottom: 30px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 0; }
-  #control button {
-    background: #FFFFFF;
-    color: #373737;
-    font-weight: bold;
-    border: none;
-    font: normal 18px/24px 'Helvetica Neue', Helvetica, Arial, freesans, sans-serif;
-    margin: 0 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    box-shadow: 0 2px 0 #63211F;
-    outline: none;
-    position: relative; }
-    #control button:active {
-      background: #63211F;
-      color: #FFFFFF;
-      bottom: -2px;
-      box-shadow: none; }
-
-#source {
-  width: 500px;
-  margin: 20px auto; }
-  #source a {
-    color: #C7433E; }
-
 @media only screen and (min-width: 768px) {
   /* tablets and desktop */
   li#welcome {
     background-color: blue; } }
 @media all and (max-width: 420px) {
   /* phones */
-  li#welcome {
-    background-color: red; }
-
   .viewport .listings {
     width: 90%;
     height: 33%;
     position: absolute;
-    bottom: 50px;
+    bottom: 30px;
     left: 50%;
     margin-left: -45%;
     border-radius: 10px; }

@@ -2,23 +2,14 @@ body {
   font: normal 16px/24px 'Helvetica Neue', Helvetica, Arial, freesans, sans-serif;
 }
 
-button, input, code {
-  display: inline-block;
-  outline: none;
-  font: inherit;
-  border: none;
-  background: #FDE991;
-  padding: 0;
-}
+#home .card-header { background-image: url("../img/image-1.jpg"); }
+#welcome .card-header { background-image: url("../img/image-2.jpg"); }
+#listing1 .card-header { background-image: url("../img/image-3.jpg"); }
+#listing2 .card-header { background-image: url("../img/image-4.jpg"); }
+#listing3 .card-header { background-image: url("../img/image-5.jpg"); }
+#listing4 .card-header { background-image: url("../img/image-6.jpg"); }
+#listing5 .card-header { background-image: url("../img/image-7.jpg"); }
 
-button {
-  color: #C7433E;
-  cursor: pointer;
-}
-
-input {
-  width: 50px;
-}
 
 .viewport {
   position: relative;
@@ -32,6 +23,29 @@ input {
     left: 50%;
     margin-left: -100px;
     border-radius: 10px;
+    .card, .card section{
+      height: 100%;
+      .card-header {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+      }
+    }
+    .card-content {
+      height: 30%;
+      padding: 10px;
+      margin-top: -20%;
+      color: white;
+      background: rgba(0,0,0,.5);
+      article p {
+        color: rgba(255,255,255,.75);
+      }
+    }
+    section {
+      line-height: 25px;
+      font-size: 13px;
+    }
   }
   li {
     width: 200px;
@@ -48,12 +62,6 @@ input {
     font-size: 1em;
     box-sizing: border-box;
     cursor: default;
-    &.clubs, &.spades {
-      color: #373737;
-    }
-    &.diamonds, &.hearts {
-      color: #ED5D52;
-    }
     &.in-deck {
       &:nth-child(3) {
         top: 2px;
@@ -64,41 +72,5 @@ input {
         transform: translate(-4px, -2px) rotate(-1deg);
       }
     }
-  }
-}
-
-#control {
-  position: absolute;
-  bottom: 30px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 0;
-  button {
-    background: #FFFFFF;
-    color: #373737;
-    font-weight: bold;
-    border: none;
-    font: normal 18px/24px 'Helvetica Neue', Helvetica, Arial, freesans, sans-serif;
-    margin: 0 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    box-shadow: 0 2px 0 #63211F;
-    outline: none;
-    position: relative;
-    &:active {
-      background: #63211F;
-      color: #FFFFFF;
-      bottom: -2px;
-      box-shadow: none;
-    }
-  }
-}
-
-#source {
-  width: 500px;
-  margin: 20px auto;
-  a {
-    color: #C7433E;
   }
 }
