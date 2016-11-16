@@ -166,7 +166,7 @@ input {
   /* tablets and desktop */
   li#welcome {
     background-color: blue; } }
-@media all and (max-width: 414px) {
+@media all and (max-width: 420px) {
   /* phones */
   li#welcome {
     background-color: red; }
@@ -182,9 +182,5 @@ input {
     .viewport .listings li {
       width: 100%;
       height: 100%; } }
-@media only screen and (max-width: 640px) and (orientation: portrait) {
-  /* portrait phones */
-  li#welcome {
-    background-color: purple; } }
 
 /*# sourceMappingURL=styles.css.map */
