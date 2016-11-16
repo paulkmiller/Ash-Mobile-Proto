@@ -81,14 +81,14 @@
     stack.on('throwout', function (e) {
       var target = e.target
       target.classList.remove('in-deck');
-      checkDeck(target);
+      nextCard(target);
     });
 
     stack.on('throwin', function (e) {
         e.target.classList.add('in-deck');
     });
 
-    function checkDeck(target) {
+    function nextCard(target) {
       var $topCard = $('.listings').find('li.in-deck').not($(target)).last()
       $topCard.css("background-color", "red");
       map.flyTo(listings[$topCard.attr("id")]);

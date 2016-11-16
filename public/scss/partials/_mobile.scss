@@ -1,0 +1,34 @@
+/////////////////////////////////////
+// Ultra Generalized Media Queries //
+/////////////////////////////////////
+
+@media only screen and (min-width: 768px) {
+  /* tablets and desktop */
+  li#welcome { background-color: blue; }
+}
+
+@media all and (max-width: 414px) {
+  /* phones */
+  li#welcome { background-color: red; }
+
+  .viewport {
+    .listings {
+      width: 90%;
+      height: 33%;
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      margin-left: -45%;
+      border-radius: 10px;
+      li{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) and (orientation: portrait) {
+  /* portrait phones */
+  li#welcome { background-color: purple;}
+}

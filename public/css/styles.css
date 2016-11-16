@@ -1,3 +1,29 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  height: 100%; }
+
+.map-overlay {
+  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  position: absolute;
+  width: 25%;
+  top: 10px;
+  left: 10px;
+  padding: 10px;
+  display: none; }
+
+.mapboxgl-popup-close-button {
+  padding: 5px; }
+
+.mapboxgl-popup-content h1 {
+  margin-bottom: 20px; }
+
 #map {
   position: fixed; }
 
@@ -49,217 +75,116 @@
   padding: 10px;
   display: none; }
 
-*, *:before, *:after {
-  box-sizing: border-box;
-  margin: 0;
+body {
+  font: normal 16px/24px 'Helvetica Neue', Helvetica, Arial, freesans, sans-serif; }
+
+button, input, code {
+  display: inline-block;
+  outline: none;
+  font: inherit;
+  border: none;
+  background: #FDE991;
   padding: 0; }
 
-html, body {
-  height: 100%; }
+button {
+  color: #C7433E;
+  cursor: pointer; }
 
-#info {
-  display: block;
+input {
+  width: 50px; }
+
+.viewport {
   position: relative;
-  margin: 0px auto;
-  width: 50%;
-  padding: 10px;
-  border: none;
-  border-radius: 3px;
-  font-size: 12px;
-  text-align: center;
-  color: #222;
-  background: #fff; }
-
-.map-overlay {
-  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  background-color: #fff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
-  position: absolute;
-  width: 25%;
-  top: 10px;
-  left: 10px;
-  padding: 10px;
-  display: none; }
-
-a {
-  color: black; }
-
-.wrapper {
   height: 100%;
-  background-image: url(http://static2.apartmentshowcase.com/stylesheets/css/images/temp/intro.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover; }
-
-.absolute-center, .menu, .menu .btn .fa, .menu .btn.trigger .line {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%); }
-
-.menu {
-  width: 5em;
-  height: 5em;
-  margin-top: -100px; }
-  .menu .btn {
+  width: 100%; }
+  .viewport .listings {
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -100px;
+    border-radius: 10px; }
+  .viewport li {
+    width: 200px;
+    height: 300px;
+    list-style: none;
+    background: #fff;
+    border-radius: 5px;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.15);
-    opacity: 0;
-    z-index: -10;
-    cursor: pointer;
-    transition: opacity 1s, z-index 0.3s, transform 1s;
-    transform: translateX(0); }
-    .menu .btn .fa {
-      font-size: 1.5em;
-      transition: color 0.3s; }
-    .menu .btn:hover .fa {
-      color: #10e1fc; }
-    .menu .btn.trigger {
-      opacity: 1;
-      z-index: 100;
-      cursor: pointer;
-      transition: transform 0.3s; }
-      .menu .btn.trigger:hover {
-        transform: scale(1.2); }
-      .menu .btn.trigger .line {
-        width: 40%;
-        height: 6px;
-        background: #000;
-        border-radius: 6px;
-        transition: background-color 0.3s, height 0.3s, top 0.3s; }
-        .menu .btn.trigger .line:before, .menu .btn.trigger .line:after {
-          content: "";
-          display: block;
-          position: absolute;
-          left: 0;
-          width: 100%;
-          height: 6px;
-          background: #000;
-          border-radius: 6px;
-          transition: background-color 0.3s, transform 0.3s; }
-        .menu .btn.trigger .line:before {
-          top: -10px;
-          transform-origin: 15% 100%; }
-        .menu .btn.trigger .line:after {
-          top: 10px;
-          transform-origin: 25% 30%; }
-  .menu .rotater {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform-origin: 50% 50%; }
-  .menu.active .btn-icon {
-    opacity: 1;
-    z-index: 50; }
-  .menu.active .trigger .line {
-    height: 0px;
-    top: 45%; }
-    .menu.active .trigger .line:before {
-      transform: rotate(45deg);
-      width: 110%;
-      top: -7px; }
-    .menu.active .trigger .line:after {
-      transform: rotate(-45deg);
-      width: 110%; }
+    border: 1px solid grey;
+    line-height: 300px;
+    text-align: center;
+    font-size: 1em;
+    box-sizing: border-box;
+    cursor: default; }
+    .viewport li.clubs, .viewport li.spades {
+      color: #373737; }
+    .viewport li.diamonds, .viewport li.hearts {
+      color: #ED5D52; }
+    .viewport li.in-deck:nth-child(3) {
+      top: 2px;
+      transform: translate(2px, 2px) rotate(0.4deg); }
+    .viewport li.in-deck:nth-child(2) {
+      top: 4px;
+      transform: translate(-4px, -2px) rotate(-1deg); }
 
-.rotater:nth-child(1) {
-  transform: rotate(-22.5deg); }
-
-.menu.active .rotater:nth-child(1) .btn-icon {
-  transform: translateY(-10em) rotate(22.5deg); }
-
-.rotater:nth-child(2) {
-  transform: rotate(22.5deg); }
-
-.menu.active .rotater:nth-child(2) .btn-icon {
-  transform: translateY(-10em) rotate(-22.5deg); }
-
-.rotater:nth-child(3) {
-  transform: rotate(67.5deg); }
-
-.menu.active .rotater:nth-child(3) .btn-icon {
-  transform: translateY(-10em) rotate(-67.5deg); }
-
-.rotater:nth-child(4) {
-  transform: rotate(112.5deg); }
-
-.menu.active .rotater:nth-child(4) .btn-icon {
-  transform: translateY(-10em) rotate(-112.5deg); }
-
-.rotater:nth-child(5) {
-  transform: rotate(157.5deg); }
-
-.menu.active .rotater:nth-child(5) .btn-icon {
-  transform: translateY(-10em) rotate(-157.5deg); }
-
-.rotater:nth-child(6) {
-  transform: rotate(202.5deg); }
-
-.menu.active .rotater:nth-child(6) .btn-icon {
-  transform: translateY(-10em) rotate(-202.5deg); }
-
-.rotater:nth-child(7) {
-  transform: rotate(247.5deg); }
-
-.menu.active .rotater:nth-child(7) .btn-icon {
-  transform: translateY(-10em) rotate(-247.5deg); }
-
-.rotater:nth-child(8) {
-  transform: rotate(292.5deg); }
-
-.menu.active .rotater:nth-child(8) .btn-icon {
-  transform: translateY(-10em) rotate(-292.5deg); }
-
-#buttons {
-  width: 90%;
-  margin: 0 auto; }
-
-.button {
-  display: block;
-  transform: translateX(-20%) translateY(100%);
-  position: relative;
-  cursor: pointer;
-  width: 20%;
-  padding: 8px;
-  border-radius: 3px;
-  margin-bottom: 10px;
-  font-size: 12px;
-  text-align: center;
-  color: #fff;
-  background: #ee8a65;
-  font-family: sans-serif;
-  font-weight: bold; }
-
-.close-button {
+#control {
   position: absolute;
-  border: none;
-  background: none;
-  margin: 0;
-  z-index: 100;
-  top: 0;
+  bottom: 30px;
+  left: 0;
   right: 0;
-  font-size: 18px;
-  color: #000;
-  cursor: pointer;
-  padding: 20px 30px;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s; }
+  text-align: center;
+  font-size: 0; }
+  #control button {
+    background: #FFFFFF;
+    color: #373737;
+    font-weight: bold;
+    border: none;
+    font: normal 18px/24px 'Helvetica Neue', Helvetica, Arial, freesans, sans-serif;
+    margin: 0 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    box-shadow: 0 2px 0 #63211F;
+    outline: none;
+    position: relative; }
+    #control button:active {
+      background: #63211F;
+      color: #FFFFFF;
+      bottom: -2px;
+      box-shadow: none; }
 
-.close-button:hover {
-  color: #7b7b7b; }
+#source {
+  width: 500px;
+  margin: 20px auto; }
+  #source a {
+    color: #C7433E; }
 
-.mapboxgl-popup-close-button {
-  padding: 5px; }
+@media only screen and (min-width: 768px) {
+  /* tablets and desktop */
+  li#welcome {
+    background-color: blue; } }
+@media all and (max-width: 414px) {
+  /* phones */
+  li#welcome {
+    background-color: red; }
 
-.mapboxgl-popup-content h1 {
-  margin-bottom: 20px; }
+  .viewport .listings {
+    width: 90%;
+    height: 33%;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -45%;
+    border-radius: 10px; }
+    .viewport .listings li {
+      width: 100%;
+      height: 100%; } }
+@media only screen and (max-width: 640px) and (orientation: portrait) {
+  /* portrait phones */
+  li#welcome {
+    background-color: purple; } }
 
 /*# sourceMappingURL=styles.css.map */
