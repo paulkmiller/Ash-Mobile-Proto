@@ -12,8 +12,9 @@ body {
 
 
 .viewport {
-  position: relative;
-  height: 100%;
+  position: absolute;
+  height: 500px;
+  bottom: 80px;
   width: 100%;
   .listings {
     width: 200px;
