@@ -33,6 +33,9 @@ header {
   width: 100%;
   overflow: hidden; }
 
+.mapboxgl-ctrl-attrib.mapboxgl-ctrl {
+  display: none; }
+
 .map-overlay {
   font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
   background-color: #fff;
