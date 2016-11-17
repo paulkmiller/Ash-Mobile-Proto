@@ -13,14 +13,10 @@ body {
 
 .viewport {
   position: absolute;
-  height: 500px;
-  bottom: 80px;
+  bottom: 40px;
   width: 100%;
   .listings {
-    width: 200px;
-    height: 300px;
     position: absolute;
-    bottom: 50px;
     left: 50%;
     margin-left: -100px;
     border-radius: 10px;
@@ -35,7 +31,7 @@ body {
     }
     .expanded{
       height: 500px;
-      transform: translateY(-50%) !important;
+      transform: translateY(-65%) !important;
     }
     .card-content {
       padding: 10px;

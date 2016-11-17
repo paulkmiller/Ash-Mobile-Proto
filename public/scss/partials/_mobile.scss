@@ -53,9 +53,9 @@ $breakpoint-large: 1025px;
   }
   @include screen(small) {
     width: 80%;
-    height: 33%;
+    height: 200px;
     position: absolute;
-    bottom: 30px;
+    bottom: 0px;
     left: 50%;
     margin-left: -40%;
     border-radius: 10px;

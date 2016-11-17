@@ -68,8 +68,8 @@
     var activeListingName = 'welcome';
 
     var config = {
-      minThrowOutDistance: 1000,
-      maxThrowOutDistance: 1000,
+      minThrowOutDistance: 500,
+      maxThrowOutDistance: 500,
       maxRotation: 0,
       throwOutConfidence: function(offset, element) {
         return Math.min(Math.abs(offset) / (element.offsetWidth / ((1+5**.65)/2)), 1); // Fix dropout distance by dividing by 2
