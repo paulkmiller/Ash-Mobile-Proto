@@ -131,12 +131,18 @@ body {
     .viewport .listings .expanded {
       height: 500px;
       transform: translateY(-60%) !important; }
+      .viewport .listings .expanded .card-content {
+        height: 200px;
+        margin-top: -200px; }
     .viewport .listings .card-content {
       padding: 10px;
       margin-top: -70px;
+      height: 70px;
       position: relative;
       color: white;
-      background: rgba(0, 0, 0, 0.5); }
+      background: rgba(0, 0, 0, 0.5);
+      transition-property: all;
+      transition-duration: .65s; }
       .viewport .listings .card-content article p {
         color: rgba(255, 255, 255, 0.75); }
     .viewport .listings section {
