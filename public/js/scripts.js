@@ -1,14 +1,15 @@
 (function() {
 	// menu click event
-	$('.menuBtn').click(function() {
-		$(this).toggleClass('act');
-			if($(this).hasClass('act')) {
-				$('.mainMenu').addClass('act');
-        $('.mobile').attr('class','mobile-act');
+	$('.listings li.active').click(function(target) {
+		var $topCard = $('.listings').find('li.in-deck').not($(target)).last();
+
+		$(this).toggleClass('expanded');
+			if($(this).hasClass('expanded')) {
+				$($topCard).addClass('expanded');
 			}
 			else {
-				$('.mainMenu').removeClass('act');
-        $('.mobile-act').attr('class','mobile');
+				$($topCard).removeClass('expanded');
+
 			}
 	});
     var map = new mapboxgl.Map({
@@ -84,7 +85,7 @@
       maxThrowOutDistance: 1000,
       maxRotation: 0,
       throwOutConfidence: function(offset, element) {
-        return Math.min(Math.abs(offset) / (element.offsetWidth / ((1+5**.5)/2)), 1); // Fix dropout distance by dividing by 2
+        return Math.min(Math.abs(offset) / (element.offsetWidth / ((1+5**.65)/2)), 1); // Fix dropout distance by dividing by 2
       },
     }
 
@@ -113,7 +114,7 @@
 
 
     function nextCard(target) {
-      var $topCard = $('.listings').find('li.in-deck').not($(target)).last()
+      var $topCard = $('.listings').find('li.in-deck').not($(target)).last();
       $topCard.css("background-color", "red");
       map.flyTo(listings[$topCard.attr("id")]);
     }
