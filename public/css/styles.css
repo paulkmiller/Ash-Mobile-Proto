@@ -28,6 +28,11 @@ header {
   padding: 0 0 0 20px;
   text-transform: capitalize; }
 
+.container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
+
 .map-overlay {
   font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
   background-color: #fff;

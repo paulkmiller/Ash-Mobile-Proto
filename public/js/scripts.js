@@ -82,10 +82,6 @@
     // revert the ul li order since Swing displays them last to first
     ul.children().each(function(i,li){ul.prepend(li)})
 
-    // stupid loop to make classnames appear more human-readable
-    // var $card = $('.listings .top');
-    // $card.className=".top "+$card.className
-
     listingsArray.forEach.call($('.listings li'), function (targetElement) {
         stack.createCard(targetElement);
         targetElement.classList.add('in-deck');
@@ -94,38 +90,31 @@
 
     stack.on('throwout', function (e) {
       var target = e.target
-
       target.classList.remove('in-deck');
       target.classList.remove('top');
       nextCard(target);
+
     });
 
-    stack.on('throwin', function (target) {
-      target.classList.add('in-deck');
+    stack.on('throwin', function (e) {
+        e.target.classList.add('in-deck');
     });
 
 
     function nextCard(target) {
       var $topCard = $('.listings').find('li.in-deck').not($(target)).last();
-
       $topCard.addClass('top');
       map.flyTo(listings[$topCard.attr("id")]);
     }
 
-    $('.listings .top').click(function(){
-      expansion();
-    })
+    $('.listings li.top').click(function(target) {
+  		$(this).toggleClass('expanded');
+  			if($(this).hasClass('expanded')) {
+  				$(this).addClass('expanded');
+  			}
+  			else {
+  				$(this).removeClass('expanded');
 
-    function expansion(){
-      $('.listings .top').click(function() {
-    		$(this).toggleClass('expanded');
-    			if($(this).hasClass('expanded')) {
-    				$(this).addClass('expanded');
-    			}
-    			else {
-    				$(this).removeClass('expanded');
-
-    			}
-    	});
-    }
+  			}
+  	});
 })();
