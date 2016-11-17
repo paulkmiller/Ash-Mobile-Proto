@@ -143,8 +143,6 @@ body {
       line-height: 25px;
       font-size: 13px; }
   .viewport li {
-    width: 200px;
-    height: 300px;
     list-style: none;
     background: #fff;
     border-radius: 5px;
@@ -160,8 +158,7 @@ body {
     max-height: 500px;
     /* approximate max height */
     transition-property: all;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }
+    transition-duration: .65s; }
     .viewport li.in-deck:nth-child(3) {
       top: 2px;
       transform: translate(2px, 2px) rotate(0.4deg); }

@@ -54,8 +54,6 @@ body {
     }
   }
   li {
-    width: 200px;
-    height: 300px;
     list-style: none;
     background: #fff;
     border-radius: 5px;
@@ -70,8 +68,8 @@ body {
     cursor: default;
     max-height: 500px; /* approximate max height */
     transition-property: all;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    transition-duration: .65s;
+    // transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
     // transition: .5s cubic-bezier(0, 1, 0.5, 1);
     // transform: translateY(0);
     &.in-deck {
