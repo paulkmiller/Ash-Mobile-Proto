@@ -156,7 +156,7 @@ body {
     font-size: 1em;
     box-sizing: border-box;
     cursor: default;
-    transition: 0.5s cubic-bezier(0, 1, 0.5, 1);
+    transition: 1s cubic-bezier(1, 0.5, 0.5, 1);
     transform: translateY(0); }
     .viewport li.in-deck:nth-child(3) {
       top: 2px;
