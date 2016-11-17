@@ -67,9 +67,6 @@ header {
 .flyby .mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
   display: none; }
 
-.active {
-  display: block !important; }
-
 .map-overlay {
   font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
   background-color: #fff;
