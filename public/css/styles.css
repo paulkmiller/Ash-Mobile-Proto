@@ -115,8 +115,9 @@ body {
   .viewport .listings {
     position: absolute;
     left: 50%;
-    margin-left: -100px;
-    border-radius: 10px; }
+    margin-left: -40%;
+    border-radius: 10px;
+    bottom: 0px; }
     .viewport .listings .card, .viewport .listings .card section {
       height: 100%; }
       .viewport .listings .card .card, .viewport .listings .card section .card {
@@ -156,8 +157,11 @@ body {
     font-size: 1em;
     box-sizing: border-box;
     cursor: default;
-    transition: 1s cubic-bezier(1, 0.5, 0.5, 1);
-    transform: translateY(0); }
+    max-height: 500px;
+    /* approximate max height */
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }
     .viewport li.in-deck:nth-child(3) {
       top: 2px;
       transform: translate(2px, 2px) rotate(0.4deg); }
@@ -177,12 +181,7 @@ body {
 @media screen and (max-width: 767px) {
   .viewport .listings {
     width: 80%;
-    height: 200px;
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    margin-left: -40%;
-    border-radius: 10px; }
+    height: 200px; }
     .viewport .listings li {
       width: 100%;
       height: 100%; } }

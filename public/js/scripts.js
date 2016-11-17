@@ -107,13 +107,14 @@
       map.flyTo(listings[$topCard.attr("id")]);
     }
 
-    $('.listings li.top').click(function(target) {
-  		$(this).toggleClass('expanded');
-  			if($(this).hasClass('expanded')) {
-  				$(this).addClass('expanded');
+    $(document).on('click', '.listings li.top', function(target) {
+      $this = $(this)
+  		$this.toggleClass('expanded');
+  			if($this.hasClass('expanded')) {
+  				$this.addClass('expanded');
   			}
   			else {
-  				$(this).removeClass('expanded');
+  				$this.removeClass('expanded');
 
   			}
   	});

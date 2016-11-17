@@ -18,8 +18,9 @@ body {
   .listings {
     position: absolute;
     left: 50%;
-    margin-left: -100px;
+    margin-left: -40%;
     border-radius: 10px;
+    bottom: 0px;
     .card, .card section{
       height: 100%;
     .card{
@@ -67,9 +68,12 @@ body {
     font-size: 1em;
     box-sizing: border-box;
     cursor: default;
-    transition: 1s cubic-bezier(1, 0.5, 0.5, 1);
+    max-height: 500px; /* approximate max height */
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
     // transition: .5s cubic-bezier(0, 1, 0.5, 1);
-    transform: translateY(0);
+    // transform: translateY(0);
     &.in-deck {
       &:nth-child(3) {
         top: 2px;
