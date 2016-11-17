@@ -119,6 +119,9 @@ body {
     border-radius: 10px; }
     .viewport .listings .card, .viewport .listings .card section {
       height: 100%; }
+      .viewport .listings .card .card, .viewport .listings .card section .card {
+        position: absolute;
+        width: 100%; }
       .viewport .listings .card .card-header, .viewport .listings .card section .card-header {
         background-position: center;
         background-repeat: no-repeat;
@@ -126,10 +129,11 @@ body {
         height: 100%; }
     .viewport .listings .expanded {
       height: 500px;
-      transform: translateY(-65%) !important; }
+      transform: translateY(-60%) !important; }
     .viewport .listings .card-content {
       padding: 10px;
-      margin-top: -20%;
+      margin-top: -70px;
+      position: relative;
       color: white;
       background: rgba(0, 0, 0, 0.5); }
       .viewport .listings .card-content article p {
