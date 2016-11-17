@@ -110,7 +110,7 @@ body {
 
 .viewport {
   position: absolute;
-  bottom: 40px;
+  bottom: 0px;
   width: 100%; }
   .viewport .listings {
     position: absolute;
@@ -142,7 +142,8 @@ body {
       color: white;
       background: rgba(0, 0, 0, 0.5);
       transition-property: all;
-      transition-duration: .65s; }
+      transition-duration: .65s;
+      transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }
       .viewport .listings .card-content article p {
         color: rgba(255, 255, 255, 0.75); }
     .viewport .listings section {
@@ -151,7 +152,7 @@ body {
   .viewport li {
     list-style: none;
     background: #fff;
-    border-radius: 5px;
+    border-radius: 2px;
     position: absolute;
     top: 0;
     left: 0;
@@ -164,7 +165,8 @@ body {
     max-height: 500px;
     /* approximate max height */
     transition-property: all;
-    transition-duration: .65s; }
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }
     .viewport li.in-deck:nth-child(3) {
       top: 2px;
       transform: translate(2px, 2px) rotate(0.4deg); }
