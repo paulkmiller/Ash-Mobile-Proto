@@ -1,4 +1,16 @@
 (function() {
+	// menu click event
+	$('.menuBtn').click(function() {
+		$(this).toggleClass('act');
+			if($(this).hasClass('act')) {
+				$('.mainMenu').addClass('act');
+        $('.mobile').attr('class','mobile-act');
+			}
+			else {
+				$('.mainMenu').removeClass('act');
+        $('.mobile-act').attr('class','mobile');
+			}
+	});
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/light-v9',
