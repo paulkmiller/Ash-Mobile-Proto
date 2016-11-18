@@ -174,10 +174,10 @@ body {
   background-image: url("../img/image-5.jpg"); }
 
 #listing2 footer {
-  background-image: url("../img/image-4.jpg"); }
+  background-image: url("../img/image-3.jpg"); }
 
 #listing3 footer {
-  background-image: url("../img/image-3.jpg"); }
+  background-image: url("../img/image-4.jpg"); }
 
 #listing4 footer {
   background-image: url("../img/image-2.jpg"); }
@@ -225,6 +225,11 @@ body {
       transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }
       .viewport .listings .card-content article p {
         color: rgba(255, 255, 255, 0.75); }
+      .viewport .listings .card-content footer p {
+        font-size: 1.5em;
+        padding: 10px 0;
+        color: #fff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
     .viewport .listings section {
       line-height: 25px;
       font-size: 13px; }

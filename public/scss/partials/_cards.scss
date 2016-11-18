@@ -13,8 +13,8 @@ body {
 #home footer     { background-image: url("../img/image-7.jpg"); }
 #welcome footer  { background-image: url("../img/image-6.jpg"); }
 #listing1 footer { background-image: url("../img/image-5.jpg"); }
-#listing2 footer { background-image: url("../img/image-4.jpg"); }
-#listing3 footer { background-image: url("../img/image-3.jpg"); }
+#listing2 footer { background-image: url("../img/image-3.jpg"); }
+#listing3 footer { background-image: url("../img/image-4.jpg"); }
 #listing4 footer { background-image: url("../img/image-2.jpg"); }
 #listing5 footer { background-image: url("../img/image-1.jpg"); }
 
@@ -63,6 +63,15 @@ body {
       transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
       article p {
         color: rgba(255,255,255,.75);
+      }
+      footer p {
+        font-size: 1.5em;
+        padding: 10px 0;
+        color: #fff;
+        text-shadow: -1px -1px 0 #000,
+                      1px -1px 0 #000,
+                     -1px 1px 0 #000,
+                      1px 1px 0 #000;
       }
     }
     section {
