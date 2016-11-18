@@ -109,13 +109,19 @@
 
     $(document).on('click', '.listings li.top', function(target) {
       $this = $(this)
+      $info = $('table')
+
   		$this.toggleClass('expanded');
+      $info.toggleClass('table-show');
+
   			if($this.hasClass('expanded')) {
   				$this.addClass('expanded');
+          $info.addClass('table-show');
   			}
   			else {
   				$this.removeClass('expanded');
-
+          $info.removeClass('table-show');
   			}
   	});
+
 })();

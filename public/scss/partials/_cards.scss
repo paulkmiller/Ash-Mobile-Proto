@@ -39,11 +39,11 @@ body {
       transform: translateY(-60%) !important;
       .card-content{
         height: 200px;
-        margin-top:-200px;
+        margin-top:-280px;
       }
     }
     .card-content {
-      padding: 10px;
+      padding: 10px 0px;
       margin-top: -70px;
       height: 70px;
       position: relative;
@@ -52,9 +52,14 @@ body {
       transition-property: all;
       transition-duration: .65s;
       transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-
       article p {
         color: rgba(255,255,255,.75);
+      }
+      .extra-info p {
+        visibility: hidden;
+        &.active {
+          visibility: visible;
+        }
       }
     }
     section {
