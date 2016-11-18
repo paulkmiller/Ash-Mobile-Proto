@@ -68,60 +68,60 @@ var listings = {
         // bearing: 27,
         duration: 8000,
         center: [listingData[1].long, listingData[1].lat],
-        zoom: 17.3
+        zoom: 13
     },
     'listing1': {
         duration: 6000,
         center: [listingData[2].long, listingData[2].lat],
         // bearing: 150,
-        zoom: 17.3
+        zoom: 13
     },
     'listing2': {
         duration: 6000,
         // bearing: 90,
         center: [listingData[3].long, listingData[3].lat],
-        zoom: 17.3,
+        zoom: 13,
     },
     'listing3': {
         duration: 6000,
         // bearing: 90,
         center: [listingData[4].long, listingData[4].lat],
-        zoom: 17.3
+        zoom: 13
     },
     'listing4': {
         duration: 6000,
         // bearing: 45,
         center: [listingData[5].long, listingData[5].lat],
-        zoom: 17.3,
+        zoom: 13,
     },
     'listing5': {
         duration: 6000,
         // bearing: 180,
         center: [listingData[6].long, listingData[6].lat],
-        zoom: 17.3
+        zoom: 13
     },
     'listing6': {
         duration: 6000,
         // bearing: 90,
         center: [listingData[7].long, listingData[7].lat],
-        zoom: 17.3
+        zoom: 13
     },
     'listing7': {
         duration: 6000,
         // bearing: 90,
         center: [listingData[8].long, listingData[8].lat],
-        zoom: 17.3
+        zoom: 13
     },
     'listing8': {
         duration: 6000,
         // bearing: 90,
         center: [listingData[9].long, listingData[9].lat],
-        zoom: 17.3
+        zoom: 13
     },
     'listing9': {
         duration: 6000,
         // bearing: 90,
         center: [listingData[10].long, listingData[10].lat],
-        zoom: 17.3
+        zoom: 13
     }
 };
