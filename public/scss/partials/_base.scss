@@ -108,9 +108,9 @@ $table-border-color:            #e0e0e0;
     tbody + tbody {
       border-top: 1px solid rgba(0, 0, 0, 0.12);
     }
-    // thead:first-child > tr:first-child > th {    // Commenting out to see if still necessary
-    //   width: 100px;
-    // }
+    thead:first-child > tr:first-child > th {    // Commenting out to see if still necessary
+      width: 100px;
+    }
     td {
       white-space: nowrap;
       overflow: hidden;
@@ -123,16 +123,11 @@ $table-border-color:            #e0e0e0;
   }
 }
 
-.table-hover > tbody > tr:hover > {
-  td, th {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-}
-
-// Togglable visibility for tables
-.table-hide{
+.hide{
   display: none;
 }
-.table-show{
+.show{
   display: block;
 }
+
+.material-shadow { box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); }

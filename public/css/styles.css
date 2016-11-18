@@ -71,6 +71,8 @@ header {
     border-top: 0; }
   .table > tbody + tbody {
     border-top: 1px solid rgba(0, 0, 0, 0.12); }
+  .table > thead:first-child > tr:first-child > th {
+    width: 100px; }
   .table > td {
     white-space: nowrap;
     overflow: hidden;
@@ -78,14 +80,14 @@ header {
   .table .no-border {
     border: 0; }
 
-.table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th {
-  background-color: rgba(0, 0, 0, 0.1); }
-
-.table-hide {
+.hide {
   display: none; }
 
-.table-show {
+.show {
   display: block; }
+
+.material-shadow {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
 
 .map-overlay {
   font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -162,6 +164,9 @@ body {
 #listing5 .card-header {
   background-image: url("../img/image-7.jpg"); }
 
+#welcome footer {
+  background-image: url("../img/image-2.jpg"); }
+
 .viewport {
   position: absolute;
   bottom: 0px;
@@ -177,11 +182,13 @@ body {
       .viewport .listings .card .card, .viewport .listings .card section .card {
         position: absolute;
         width: 100%; }
-      .viewport .listings .card .card-header, .viewport .listings .card section .card-header {
+      .viewport .listings .card .card-header, .viewport .listings .card footer, .viewport .listings .card section .card-header, .viewport .listings .card section footer {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         height: 100%; }
+      .viewport .listings .card footer, .viewport .listings .card section footer {
+        height: 45px; }
     .viewport .listings .expanded {
       height: 500px;
       transform: translateY(-60%) !important; }

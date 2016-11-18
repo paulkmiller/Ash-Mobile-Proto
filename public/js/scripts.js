@@ -110,17 +110,21 @@
     $(document).on('click', '.listings li.top', function(target) {
       $this = $(this)
       $info = $('table')
+      $footer = $('footer')
 
   		$this.toggleClass('expanded');
-      $info.toggleClass('table-show');
+      $info.toggleClass('show');
+      $footer.toggleClass('show');
 
   			if($this.hasClass('expanded')) {
   				$this.addClass('expanded');
-          $info.addClass('table-show');
+          $info.addClass('show');
+          $footer.addClass('show');
   			}
   			else {
   				$this.removeClass('expanded');
-          $info.removeClass('table-show');
+          $info.removeClass('show');
+          $footer.removeClass('show');
   			}
   	});
 

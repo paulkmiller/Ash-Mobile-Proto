@@ -10,6 +10,8 @@ body {
 #listing4 .card-header { background-image: url("../img/image-6.jpg"); }
 #listing5 .card-header { background-image: url("../img/image-7.jpg"); }
 
+#welcome footer { background-image: url("../img/image-2.jpg"); }
+
 
 .viewport {
   position: absolute;
@@ -27,12 +29,13 @@ body {
       position: absolute;
       width: 100%;
     }
-      .card-header {
+      .card-header, footer {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         height: 100%;
       }
+      footer { height: 45px; }
     }
     .expanded{
       height: 500px;
