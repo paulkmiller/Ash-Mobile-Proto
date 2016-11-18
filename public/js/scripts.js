@@ -1,4 +1,7 @@
 (function() {
+  if (!mapboxgl.supported()) {
+    alert('Your browser does not support Mapbox GL');
+    } else {
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/light-v9',
@@ -107,11 +110,10 @@
       map.flyTo(listings[$topCard.attr("id")]);
     }
 
-    $(document).on('click', '.listings li.top', function(target) {
+    $(document).on('click', '.listings li.top', function(target, e) {
       $this = $(this)
       $info = $('table')
       $footer = $('footer')
-
   		$this.toggleClass('expanded');
       $info.toggleClass('show');
       $footer.toggleClass('show');
