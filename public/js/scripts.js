@@ -8,6 +8,7 @@
         center: [-77.356746, 38.957575],
         zoom: 12
     });
+  }
 
     function add_point_to_map(center) {
         var el = document.createElement('div');
