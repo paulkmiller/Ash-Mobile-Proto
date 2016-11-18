@@ -108,7 +108,7 @@ $table-border-color:            #e0e0e0;
     tbody + tbody {
       border-top: 1px solid rgba(0, 0, 0, 0.12);
     }
-    thead:first-child > tr:first-child > th {    // Commenting out to see if still necessary
+    thead:first-child > tr:first-child > th {
       width: 100px;
     }
     td {

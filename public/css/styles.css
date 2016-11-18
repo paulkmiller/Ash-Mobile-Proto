@@ -164,8 +164,26 @@ body {
 #listing5 .card-header {
   background-image: url("../img/image-7.jpg"); }
 
+#home footer {
+  background-image: url("../img/image-7.jpg"); }
+
 #welcome footer {
+  background-image: url("../img/image-6.jpg"); }
+
+#listing1 footer {
+  background-image: url("../img/image-5.jpg"); }
+
+#listing2 footer {
+  background-image: url("../img/image-4.jpg"); }
+
+#listing3 footer {
+  background-image: url("../img/image-3.jpg"); }
+
+#listing4 footer {
   background-image: url("../img/image-2.jpg"); }
+
+#listing5 footer {
+  background-image: url("../img/image-1.jpg"); }
 
 .viewport {
   position: absolute;
@@ -207,10 +225,6 @@ body {
       transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }
       .viewport .listings .card-content article p {
         color: rgba(255, 255, 255, 0.75); }
-      .viewport .listings .card-content .extra-info p {
-        visibility: hidden; }
-        .viewport .listings .card-content .extra-info p.active {
-          visibility: visible; }
     .viewport .listings section {
       line-height: 25px;
       font-size: 13px; }
