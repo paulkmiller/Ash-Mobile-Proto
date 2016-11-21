@@ -22,6 +22,7 @@ vienna
 - On clicking a marker, have its corresponding card returned
 - Fix janky expansion animations
 - Improve animation FPS on mobile; will require ancillary research into FPS boosting techniques
+- Write JS for ```swiping up as "Yes"``` and ```swiping down as "No"```
 - Better design needed for ad placements and general information display
 
 ---
@@ -37,8 +38,9 @@ bundle install
 bundle exec rackup
 ```
 
+```
 Visit localhost:9292
-
+```
 ---
 
 

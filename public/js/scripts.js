@@ -39,6 +39,7 @@
         }
     }
 
+
     $.each(listingData, function(index, listing_hash) {
         var marker = coordinateToMarkerPoint(listing_hash.description, listing_hash.long, listing_hash.lat);
         markerPoints.push(marker);
@@ -130,5 +131,4 @@
           $footer.removeClass('show');
   			}
   	});
-
 })();
