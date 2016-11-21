@@ -61,7 +61,7 @@
 
 
 
-  // establish Swing variables and intialize card functionality
+  // establish Swing variables and initialize card functionality
   var listingsArray     = [];
   var ul                = $('.listings');
   var activeListingName = 'welcome';
