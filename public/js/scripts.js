@@ -15,6 +15,7 @@
     //////////////////////////////////////////////////////////
 
     var markerPoints = []
+
     function coordinateToMarkerPoint(description, long, lat) {
         return {
             "type": "Feature",
@@ -35,6 +36,8 @@
         var marker = coordinateToMarkerPoint(listing_hash.description, listing_hash.long, listing_hash.lat);
         markerPoints.push(marker);
     });
+
+    console.log(markerPoints);
 
     map.on('load', function() {
         // Add a GeoJSON source containing place coordinates and information.
