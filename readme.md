@@ -19,7 +19,9 @@ vienna
 - Increase cross-browser support, specifically for animations on Safari
 - Change active listing-icon to ```#03a9f4``` on Swipe
 - Build "full-page" view, only available after card has been expanded
+- On clicking a marker, have its corresponding card returned
 - Fix janky expansion animations
+- Improve animation FPS on mobile; will require ancillary research into FPS boosting techniques
 - Better design needed for ad placements and general information display
 
 ---
