@@ -111,8 +111,6 @@ body {
             transition-duration: .5s;
     -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
             transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-    /* transition: .5s cubic-bezier(0, 1, 0.5, 1);*/
-    /* transform: translateY(0);*/
     &.in-deck {
       &:nth-child(3) {
         top: 2px;

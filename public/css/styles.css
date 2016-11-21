@@ -304,9 +304,7 @@ body {
     -webkit-transition-duration: .5s;
     transition-duration: .5s;
     -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-    /* transition: .5s cubic-bezier(0, 1, 0.5, 1);*/
-    /* transform: translateY(0);*/ }
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }
     .viewport li.in-deck:nth-child(3) {
       top: 2px;
       -webkit-transform: translate(2px, 2px) rotate(0.4deg);
