@@ -59,7 +59,14 @@
       });
   });
 
+  map.on('click', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['listings'] });
+    if (!features.length) { return; }
+    var feature = features[0];
 
+    clicked_listing_id = feature.listing_id;
+    console.log(clicked_listing_id);
+  });
 
   // establish Swing variables and initialize card functionality
   var listingsArray     = [];
