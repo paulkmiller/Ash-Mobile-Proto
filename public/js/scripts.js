@@ -10,14 +10,14 @@
     });
   }
 
-    function add_point_to_map(center) {
-        var el = document.createElement('div');
-        el.className = 'marker';
-
-        new mapboxgl.Marker(el)
-            .setLngLat(center)
-            .addTo(map);
-    }
+    // function add_point_to_map(center) {
+    //     var el = document.createElement('div');
+    //     el.className = 'marker';
+    //
+    //     new mapboxgl.Marker(el)
+    //         .setLngLat(center)
+    //         .addTo(map);
+    // }
 
     //////////////////////////////////////////////////////////
     ///// GeoJSON for Listing Placement + Tooltip Info ///////

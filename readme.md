@@ -39,6 +39,10 @@ bundle exec rackup
 ```
 
 ```
+sass --watch scss:css
+```
+
+```
 Visit localhost:9292
 ```
 ---

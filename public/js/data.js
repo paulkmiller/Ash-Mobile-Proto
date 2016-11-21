@@ -33,7 +33,7 @@ var listingData = [{
 }, {
     listing_id: "listing5",
     long: -77.353314,
-    lat: 38.930013,
+    lat: 38.930015,
     description: "<h1>Listing 5</h1><p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.</p>"
 }, {
     listing_id: "listing6",
@@ -68,60 +68,60 @@ var listings = {
         // bearing: 27,
         duration: 8000,
         center: [listingData[1].long, listingData[1].lat],
-        zoom: 13
+        zoom: 15
     },
     'listing1': {
         duration: 6000,
         center: [listingData[2].long, listingData[2].lat],
         // bearing: 150,
-        zoom: 13
+        zoom: 15
     },
     'listing2': {
         duration: 6000,
         // bearing: 90,
         center: [listingData[3].long, listingData[3].lat],
-        zoom: 13,
+        zoom: 15,
     },
     'listing3': {
         duration: 6000,
         // bearing: 90,
         center: [listingData[4].long, listingData[4].lat],
-        zoom: 13
+        zoom: 15
     },
     'listing4': {
         duration: 6000,
         // bearing: 45,
         center: [listingData[5].long, listingData[5].lat],
-        zoom: 13,
+        zoom: 15,
     },
     'listing5': {
         duration: 6000,
         // bearing: 180,
         center: [listingData[6].long, listingData[6].lat],
-        zoom: 13
+        zoom: 15
     },
     'listing6': {
         duration: 6000,
         // bearing: 90,
         center: [listingData[7].long, listingData[7].lat],
-        zoom: 13
+        zoom: 15
     },
     'listing7': {
         duration: 6000,
         // bearing: 90,
         center: [listingData[8].long, listingData[8].lat],
-        zoom: 13
+        zoom: 15
     },
     'listing8': {
         duration: 6000,
         // bearing: 90,
         center: [listingData[9].long, listingData[9].lat],
-        zoom: 13
+        zoom: 15
     },
     'listing9': {
         duration: 6000,
         // bearing: 90,
         center: [listingData[10].long, listingData[10].lat],
-        zoom: 13
+        zoom: 15
     }
 };
