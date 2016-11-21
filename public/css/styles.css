@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
-@import url(https://fonts.googleapis.com/css?family=Lato);
 * {
   margin: 0;
   padding: 0;
@@ -128,61 +127,6 @@ header {
 
 .mapboxgl-ctrl-attrib.mapboxgl-ctrl {
   display: none; }
-
-/*///////////////////////////////////*/
-/*//// Material Design Table ////////*/
-/*///////////////////////////////////*/
-.table {
-  width: 100%;
-  max-width: 100%;
-  background-color: #fff;
-  table-layout: auto;
-  -webkit-transition: .75s ease-in-out;
-  transition: .75s ease-in-out; }
-  .table > thead > tr, .table > tbody > tr, .table > tfoot > tr {
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease; }
-  .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
-    text-align: left;
-    padding: .5rem;
-    font-size: .6rem;
-    vertical-align: top;
-    border-top: 0;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    color: #000;
-    text-align: center; }
-  .table > thead > tr > th {
-    font-weight: 400;
-    color: #757575;
-    vertical-align: bottom;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
-  .table > caption + thead > tr:first-child > th,
-  .table > colgroup + thead > tr:first-child > th,
-  .table > thead:first-child > tr:first-child > th,
-  .table > caption + thead > tr:first-child > td,
-  .table > colgroup + thead > tr:first-child > td,
-  .table > thead:first-child > tr:first-child > td {
-    border-top: 0; }
-  .table > tbody + tbody {
-    border-top: 1px solid rgba(0, 0, 0, 0.12); }
-  .table > thead:first-child > tr:first-child > th {
-    width: 100px; }
-  .table > td {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; }
-  .table .no-border {
-    border: 0; }
-
-.hide {
-  display: none; }
-
-.show {
-  display: block; }
-
-.material-shadow {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
 
 .map-overlay {
   font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;

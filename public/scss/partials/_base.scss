@@ -130,8 +130,6 @@ $table-border-color:            #e0e0e0;
 }
 
 .material-shadow { box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); }
-@import url(https://fonts.googleapis.com/css?family=Lato);
-
 
 * {
   margin: 0;
@@ -179,86 +177,3 @@ header {
 .mapboxgl-ctrl-attrib.mapboxgl-ctrl {
   display: none;
 }
-
-
-$table-header-font-weight:      400;
-$table-header-font-color:       #757575;
-
-$table-cell-padding:            1.6rem;
-$table-condensed-cell-padding:  $table-cell-padding/2;
-
-
-$table-bg:                      #fff;
-$table-bg-accent:               #f5f5f5;
-$table-bg-hover:                rgba(0,0,0,.12);
-$table-bg-active:               $table-bg-hover;
-$table-border-color:            #e0e0e0;
-
-
-
-/*///////////////////////////////////*/
-/*//// Material Design Table ////////*/
-/*///////////////////////////////////*/
-.table {
-  width: 100%;
-  max-width: 100%;
-  background-color: #fff;
-  table-layout: auto;
-  -webkit-transition: .75s ease-in-out;
-  transition: .75s ease-in-out;
-  > {
-    thead > tr, tbody > tr, tfoot > tr {
-      -webkit-transition: all 0.3s ease;
-      transition: all 0.3s ease;
-    }
-    thead > tr > th, tbody > tr > th, tfoot > tr > th, thead > tr > td, tbody > tr > td, tfoot > tr > td {
-      text-align: left;
-      padding: .5rem;
-      font-size: .6rem;
-      vertical-align: top;
-      border-top: 0;
-      -webkit-transition: all 0.3s ease;
-      transition: all 0.3s ease;
-      color: #000;
-      text-align: center;
-    }
-    thead > tr > th {
-      font-weight: 400;
-      color: #757575;
-      vertical-align: bottom;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-    }
-    caption + thead > tr:first-child > th,
-    colgroup + thead > tr:first-child > th,
-    thead:first-child > tr:first-child > th,
-    caption + thead > tr:first-child > td,
-    colgroup + thead > tr:first-child > td,
-    thead:first-child > tr:first-child > td {
-      border-top: 0;
-    }
-    tbody + tbody {
-      border-top: 1px solid rgba(0, 0, 0, 0.12);
-    }
-    thead:first-child > tr:first-child > th {
-      width: 100px;
-    }
-    td {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-
-    }
-  }
-  .no-border {
-    border: 0;
-  }
-}
-
-.hide{
-  display: none;
-}
-.show{
-  display: block;
-}
-
-.material-shadow { box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); }
