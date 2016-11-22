@@ -1,7 +1,7 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoicG1pbGxlcmsiLCJhIjoiY2lyM3VjMzNsMDFkZHR4bHdxOWs1amt1MiJ9.nc1fPKTYXlgC1zVoYS2Oag';
 
 var listingData = [{
-    listing_id: "weelcome",
+    listing_id: "welcome",
     long: -77.356746,
     lat: 38.957575,
     description: "<h1>Welcome Test</h1> <p>"

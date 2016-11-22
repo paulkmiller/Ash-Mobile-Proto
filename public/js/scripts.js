@@ -59,16 +59,7 @@
       });
   });
 
-  var clicked_listing_id;
 
-  map.on('click', function (e) {
-    // returns ID of clicked marker
-    var features = map.queryRenderedFeatures(e.point, { layers: ['listings'] });
-    if (!features.length) { return; }
-    var feature = features[0].properties;
-    clicked_listing_id = feature.listing_id;
-    console.log(clicked_listing_id);
-  });
 
 
   // establish Swing variables and initialize card functionality
@@ -97,18 +88,37 @@
       targetElement.classList.add('in-deck');
   });
 
+  map.on('click', function (e, target) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['listings'] });
+    if (!features.length) { return; };
+    feature = features[0].properties;
+
+    clicked_listing_id = feature.listing_id;
+    card_id = $('.listings li').map(function(){ return $(this).attr('id') });
+
+
+    $.each(card_id, function(index, value){
+        if (value == clicked_listing_id){
+            console.log(value);
+            stack.getCard(value);
+        } else {
+          return;
+        }
+    });
+  });
+
 
   stack.on('throwout', function (e) {
     var target = e.target;
     target.classList.remove('in-deck');
     target.classList.remove('top');
+    target.classList.add('out-of-deck');
     nextCard(target);
-
   });
 
-  stack.on('throwin', function (e) {
-      e.target.classList.add('in-deck');
-  });
+  // stack.on('throwin', function (e) {
+  //     e.target.classList.add('in-deck');
+  // });
 
 
   function nextCard(target) {
