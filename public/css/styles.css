@@ -268,6 +268,7 @@ body {
       position: relative;
       color: white;
       background: rgba(0, 0, 0, 0.5);
+      -webkit-transform: translateZ(0);
       -webkit-transition-property: all;
       transition-property: all;
       -webkit-transition-duration: .65s;
@@ -301,16 +302,19 @@ body {
     /* approximate max height */
     -webkit-transition-property: all;
     transition-property: all;
+    -webkit-transform: translateZ(0);
     -webkit-transition-duration: .5s;
     transition-duration: .5s;
     -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
     transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }
     .viewport li.in-deck:nth-child(3) {
       top: 2px;
+      -webkit-transform: translateZ(0);
       -webkit-transform: translate(2px, 2px) rotate(0.4deg);
       transform: translate(2px, 2px) rotate(0.4deg); }
     .viewport li.in-deck:nth-child(2) {
       top: 4px;
+      -webkit-transform: translateZ(0);
       -webkit-transform: translate(-4px, -2px) rotate(-1deg);
       transform: translate(-4px, -2px) rotate(-1deg); }
 
