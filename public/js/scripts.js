@@ -1,4 +1,4 @@
-(function() {
+$(function() {
   if (!mapboxgl.supported()) {
     alert('Your browser does not support Mapbox GL');
     return;
@@ -75,7 +75,6 @@
       return Math.min(Math.abs(offset) / (element.offsetWidth / ((1+5*.65)/2)), 1); // Fix dropout distance by dividing by 2
     }
   };
-
   var stack = gajus.Swing.Stack(config);
 
   // revert the ul li order since Swing displays them last to first
@@ -100,7 +99,11 @@
     $.each(card_id, function(index, value){
         if (value == clicked_listing_id){
             console.log(value);
-            stack.getCard(value);
+            console.log("hey")
+            // throws card back into deck on icon click;
+            stack.getCard(document.getElementById(value)).throwIn(1,1);
+            // TODO: figure out how to put card on top of deck-- currently places card in-deck based on original DOM order
+            // TODO: flyTo(clickedlocation).after(cardHasBeenInserted);
         } else {
           return;
         }
@@ -116,9 +119,9 @@
     nextCard(target);
   });
 
-  // stack.on('throwin', function (e) {
-  //     e.target.classList.add('in-deck');
-  // });
+  stack.on('throwin', function (e) {
+      e.target.classList.add('in-deck');
+  });
 
 
   function nextCard(target) {
@@ -126,6 +129,24 @@
     $topCard.addClass('top');
     map.flyTo(listings[$topCard.attr("id")]);
   }
+
+  $(document).on('click', '.listings li .info', function(e) {
+    e.preventDefault();
+    var listings = $('.listings');
+    var listingsCard = $('.listings li.top');
+
+    listings.toggleClass('listings-full');
+    listingsCard.toggleClass('full');
+
+    if (listings.hasClass('listings-full')) {
+      listings.addClass('listings-full');
+      listingsCard.addClass('full');
+    } else {
+      listings.removeClass('listings-full');
+      listingsCard.removeClass('full');
+    }
+    return false
+  });
 
   $(document).on('click', '.listings li.top', function(target, e) {
     $this   = $(this);
@@ -146,4 +167,4 @@
       $footer.removeClass('show');
     }
   });
-})();
+});
