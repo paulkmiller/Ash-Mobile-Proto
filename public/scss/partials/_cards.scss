@@ -114,7 +114,7 @@ body {
       // }
       .extra-info {
         margin-top: 10px;
-        overflow: scroll;
+        overflow-scrolling: auto;
         -webkit-overflow-scrolling: touch;
         height: 30vh;
       }
