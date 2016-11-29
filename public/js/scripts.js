@@ -60,8 +60,6 @@ $(function() {
   });
 
 
-
-
   // establish Swing variables and initialize card functionality
   var listingsArray     = [];
   var ul                = $('.listings');
@@ -130,37 +128,6 @@ $(function() {
     map.flyTo(listings[$topCard.attr("id")]);
   }
 
-
-  // TODO: Turn Anonymous function into named function for performance boost
-  $(document).on('click', '.listings li .info', function(e) {
-    $listings     = $('.listings');
-    $listingsCard = $('.listings li.top');
-    $table        = $('.listings li.top table');
-    $footer       = $('.listings li.top footer');
-
-    // condition ? value-if-true : value-if-fale
-
-    // if ($('.viewport .listings').has('.listings-full')) { keep '.expanded' from being removed } else { keep keeping '.expanded' from being removed }
-
-    $listings.toggleClass('listings-full');
-    $listingsCard.toggleClass('full expanded');
-    $table.toggleClass('show');
-    $footer.toggleClass('show');
-
-    if ($listings.hasClass('listings-full')) {
-      $listings.addClass('listings-full');
-      $listingsCard.addClass('full expanded');
-      $table.addClass('show');
-      $footer.addClass('show');
-    } else {
-      $listings.removeClass('listings-full');
-      $listingsCard.removeClass('full');
-      $table.removeClass('show');
-      $footer.removeClass('show');
-    }
-    return false
-  });
-
   $(document).on('click', '.listings li.top', function(target, e) {
     $this   = $(this);
     $table  = $('.top table');
@@ -180,5 +147,37 @@ $(function() {
       $table.removeClass('show');
       $footer.removeClass('show');
     }
+  });
+
+  // TODO: Turn Anonymous function into named function for performance boost
+  $(document).on('click', '.listings li .info', function(e) {
+    $listings     = $('.listings');
+    $listingsCard = $('.listings li.top');
+    $header       = $('.listings li.top .card-header');
+    $table        = $('.listings li.top table');
+    $footer       = $('.listings li.top footer');
+
+    // condition ? value-if-true : value-if-fale
+
+    // if ($('.viewport .listings').has('.listings-full')) { keep '.expanded' from being removed } else { keep keeping '.expanded' from being removed }
+
+    $listings.toggleClass('listings-full');
+    $listingsCard.toggleClass('full expanded');
+    $table.toggleClass('show');
+    $footer.toggleClass('show');
+
+    if ($listings.hasClass('listings-full')) {
+      $listings.addClass('listings-full');
+      $listingsCard.addClass('full expanded');
+      $table.addClass('show');
+      $footer.addClass('show');
+      $header.unbind('click');
+    } else {
+      $listings.removeClass('listings-full');
+      $listingsCard.removeClass('full');
+      $table.removeClass('show');
+      $footer.removeClass('show');
+    }
+    return false
   });
 });
