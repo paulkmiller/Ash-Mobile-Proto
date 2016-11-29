@@ -171,7 +171,7 @@ $(function() {
       $listingsCard.addClass('full expanded');
       $table.addClass('show');
       $footer.addClass('show');
-      $header.unbind('click');
+      $headere.unbind('click');
     } else {
       $listings.removeClass('listings-full');
       $listingsCard.removeClass('full');

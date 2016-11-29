@@ -237,10 +237,10 @@ body {
         height: 200px;
         margin-top: -280px; }
     .viewport .listings .full {
-      height: 80vh;
+      height: 90vh;
       width: 100vw;
-      -webkit-transform: translateY(-80%) !important;
-      transform: translateY(-80%) !important; }
+      -webkit-transform: translateY(-67%) !important;
+      transform: translateY(-67%) !important; }
     .viewport .listings .card-content {
       padding: 10px 0px;
       margin-top: -70px;
@@ -262,6 +262,10 @@ body {
         padding: 10px 0;
         color: #fff;
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
+      .viewport .listings .card-content .extra-info {
+        margin-top: 10px;
+        overflow: scroll;
+        height: 30vh; }
     .viewport .listings section {
       line-height: 25px;
       font-size: 13px; }
@@ -309,7 +313,7 @@ body {
 @media screen and (max-width: 767px) {
   .viewport .listings {
     width: 80vw;
-    height: 25vh; }
+    height: 30vh; }
     .viewport .listings li {
       width: 100%;
       height: 100%; } }
