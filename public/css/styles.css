@@ -264,9 +264,8 @@ body {
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
       .viewport .listings .card-content .extra-info {
         margin-top: 10px;
-        overflow-scrolling: auto;
-        -webkit-overflow-scrolling: touch;
-        height: 30vh; }
+        height: 30vh;
+        overflow: scroll; }
     .viewport .listings section {
       line-height: 25px;
       font-size: 13px; }

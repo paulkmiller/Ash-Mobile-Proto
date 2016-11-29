@@ -114,9 +114,8 @@ body {
       // }
       .extra-info {
         margin-top: 10px;
-        overflow-scrolling: auto;
-        -webkit-overflow-scrolling: touch;
         height: 30vh;
+        overflow:scroll;
       }
     }
     section {
