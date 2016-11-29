@@ -26,6 +26,7 @@ vienna
 + Fix janky expansion animations
 + Improve animation FPS on mobile will require ancillary research into FPS boosting techniques
 + Write JS for ```swiping up as "Yes"``` and ```swiping down as "No"```
++ Add placeholder subnav for display purposes
 + Better design needed for ad placements and general information display
 
 ---
