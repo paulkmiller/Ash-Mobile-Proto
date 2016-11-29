@@ -1,3 +1,14 @@
+var config = {
+  minThrowOutDistance: 500,
+  maxThrowOutDistance: 500,
+  maxRotation: 0,
+  throwOutConfidence: function(offset, element) {
+    return Math.min(Math.abs(offset) / (element.offsetWidth / ((1+5*.65)/2)), 1); // Fix dropout distance by dividing by 2
+  }
+};
+
+var stack = gajus.Swing.Stack(config);
+
 $(function() {
   if (!mapboxgl.supported()) {
     alert('Your browser does not support Mapbox GL');
@@ -65,16 +76,6 @@ $(function() {
   var ul                = $('.listings');
   var activeListingName = 'welcome';
 
-  var config = {
-    minThrowOutDistance: 500,
-    maxThrowOutDistance: 500,
-    maxRotation: 0,
-    throwOutConfidence: function(offset, element) {
-      return Math.min(Math.abs(offset) / (element.offsetWidth / ((1+5*.65)/2)), 1); // Fix dropout distance by dividing by 2
-    }
-  };
-
-  var stack = gajus.Swing.Stack(config);
 
   // revert the ul li order since Swing displays them last to first
   ul.children().each(function(i,li) {
@@ -133,18 +134,18 @@ $(function() {
     $table  = $('.top table');
     $footer = $('.top footer');
 
-    $this.toggleClass('expanded');
-    $table.toggleClass('show');
+      $this.toggleClass('expanded');
+     $table.toggleClass('show');
     $footer.toggleClass('show');
 
 
-    if ($this.hasClass('expanded')) {
-      $this.addClass('expanded');
-      $table.addClass('show');
-      $footer.addClass('show');
-    } else {
-      $this.removeClass('expanded');
-      $table.removeClass('show');
+       if ($this.hasClass('expanded')) {
+           $this.addClass('expanded');
+          $table.addClass('show');
+         $footer.addClass('show');
+       } else {
+        $this.removeClass('expanded');
+       $table.removeClass('show');
       $footer.removeClass('show');
     }
   });
@@ -167,16 +168,16 @@ $(function() {
     $footer.toggleClass('show');
 
     if ($listings.hasClass('listings-full')) {
-      $listings.addClass('listings-full');
+              $header.unbind('click');
+             $table.addClass('show');
+            $footer.addClass('show');
+          $listings.addClass('listings-full');
       $listingsCard.addClass('full expanded');
-      $table.addClass('show');
-      $footer.addClass('show');
-      $header.unbind('click');
     } else {
-      $listings.removeClass('listings-full');
-      $listingsCard.removeClass('full');
-      $table.removeClass('show');
-      $footer.removeClass('show');
+          $table.removeClass('show');
+         $footer.removeClass('show');
+       $listings.removeClass('listings-full');
+   $listingsCard.removeClass('full');
     }
     return false
   });

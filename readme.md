@@ -24,8 +24,8 @@ vienna
 + ~~On clicking a marker, have its corresponding card returned-- See [Mapbox-GL-JS Listings Demo](https://www.mapbox.com/help/building-a-store-locator/) for similar behavior~~
 + Have returned card go to top of deck
 + ~~Keep cards other than top card from expanding on click~~
-+ Keep cards from expanding the viewport once .expanded; `overflow:scroll` in conjunction with shifting `height` values is potential solution, but requires fine tooning. See Ln. 107-114 on `_cards.scss`
-+ Fix janky expansion animations
++ ~~Keep cards from expanding the viewport once .expanded; `overflow:scroll` in conjunction with shifting `height` values is potential solution, but requires fine tooning. See Ln. 107-114 on `_cards.scss`~~
++ Write functions to kill all Swing events on `.expanded` to allow `overflow:scroll` and the image gallery idea to work
 + Add carousel gallery for each listing assuming listing is `.expanded` and `.full-listing` is active
 + Improve animation FPS on mobile will require ancillary research into FPS boosting techniques
 + Write JS for ```swiping up as "Yes"``` and ```swiping down as "No"```
