@@ -16,27 +16,6 @@ $(function() {
   ///// GeoJSON for Listing Placement + Tooltip Info ///////
   //////////////////////////////////////////////////////////
 
-  var markerPoints = [];
-  function coordinateToMarkerPoint(description, long, lat, listing_id) {
-      return {
-          "type": "Feature",
-          "properties": {
-              "listing_id":  listing_id,
-              "description": description,
-              "iconSize":    [20, 20],
-              "icon":        "circle"
-          },
-          "geometry": {
-              "type":        "Point",
-              "coordinates": [long, lat]
-          }
-      };
-  }
-
-  $.each(listingData, function(index, listing_hash) {
-      var marker = coordinateToMarkerPoint(listing_hash.description, listing_hash.long, listing_hash.lat, listing_hash.listing_id);
-      markerPoints.push(marker);
-  });
 
   map.on('load', function() {
       // Add a GeoJSON source containing place coordinates and information.
@@ -44,7 +23,7 @@ $(function() {
           "type": "geojson",
           "data": {
               "type": "FeatureCollection",
-              "features": markerPoints
+              "features": createMarkers(listingData)
           }
       });
       // Add a layer showing the places.
@@ -58,6 +37,36 @@ $(function() {
           }
       });
   });
+
+  function getLocationByListingId(listingId) {
+    return listings[listingId];
+  }
+
+  function createMarkers(listingData) {
+    var markers = []
+    $.each(listingData, function(index, listingHash) {
+        markers.push({
+            "type": "Feature",
+            "properties": {
+                "listingId":  listingHash.listingId,
+                "description": listingHash.description,
+                "iconSize":    [20, 20],
+                "icon":        "circle",
+            },
+            "geometry": {
+                "type":        "Point",
+                "coordinates": [listingHash.long, listingHash.lat]
+            }
+        });
+    });
+
+    return markers;
+  }
+
+
+  //////////////////////////////////////////////////////////
+  ///// Cards //////////////////////////////////////////////
+  //////////////////////////////////////////////////////////
 
 
   // establish Swing variables and initialize card functionality
@@ -76,57 +85,45 @@ $(function() {
 
   var stack = gajus.Swing.Stack(config);
 
-  // revert the ul li order since Swing displays them last to first
-  ul.children().each(function(i,li) {
-    ul.prepend(li);
-  });
 
-  listingsArray.forEach.call($('.listings li'), function (targetElement) {
-      stack.createCard(targetElement);
-      targetElement.classList.add('in-deck');
-  });
+  reverseCardsInDeck();
+  addAllCardsToDeck();
+
 
   map.on('click', function (e, target) {
     var features = map.queryRenderedFeatures(e.point, { layers: ['listings'] });
     if (!features.length) { return; };
-    feature = features[0].properties;
 
-    clicked_listing_id = feature.listing_id;
-    card_id = $('.listings li').map(function(){ return $(this).attr('id') });
+    var clickedListingId = features[0].properties.listingId;
+    var cardId = $('.listings li').map(function(){ return $(this).attr('id') });
 
-
-    $.each(card_id, function(index, value){
-        if (value == clicked_listing_id){
-            console.log(value);
+    $.each(cardId, function(index, value){
+        if (value == clickedListingId){
             // throws card back into deck on icon click;
             stack.getCard(document.getElementById(value)).throwIn(1,1);
+
             // TODO: figure out how to put card on top of deck-- currently places card in-deck based on original DOM order
             // TODO: flyTo(clickedlocation).after(cardHasBeenInserted);
+
+            console.log("Flying to " + value);
+            map.flyTo(getLocationByListingId(clickedListingId));
         } else {
           return;
         }
     });
   });
 
-
   stack.on('throwout', function (e) {
     var target = e.target;
     target.classList.remove('in-deck');
     target.classList.remove('top');
     target.classList.add('out-of-deck');
-    nextCard(target);
+    updateTopCard(target);
   });
 
   stack.on('throwin', function (e) {
-      e.target.classList.add('in-deck');
+    e.target.classList.add('in-deck');
   });
-
-
-  function nextCard(target) {
-    var $topCard = $('.listings').find('li.in-deck').not($(target)).last();
-    $topCard.addClass('top');
-    map.flyTo(listings[$topCard.attr("id")]);
-  }
 
   $(document).on('click', '.listings li.top', function(target, e) {
     $this   = $(this);
@@ -136,7 +133,6 @@ $(function() {
     $this.toggleClass('expanded');
     $table.toggleClass('show');
     $footer.toggleClass('show');
-
 
     if ($this.hasClass('expanded')) {
       $this.addClass('expanded');
@@ -180,4 +176,28 @@ $(function() {
     }
     return false
   });
+
+  function addAllCardsToDeck() {
+    listingsArray.forEach.call($('.listings li'), function (targetElement) {
+      createCardAndAddToDeck(targetElement)
+    });
+  }
+
+  function createCardAndAddToDeck(targetElement) {
+    stack.createCard(targetElement);
+    targetElement.classList.add('in-deck');
+  }
+
+  function reverseCardsInDeck() {
+    ul.children().each(function(i,li) {
+      ul.prepend(li);
+    });
+  }
+
+  function updateTopCard(target) {
+    var $topCard = $('.listings').find('li.in-deck').not($(target)).last();
+    $topCard.addClass('top');
+    map.flyTo(listings[$topCard.attr("id")]);
+  }
+
 });
