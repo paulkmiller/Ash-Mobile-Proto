@@ -100,7 +100,6 @@ $(function() {
     $.each(card_id, function(index, value){
         if (value == clicked_listing_id){
             console.log(value);
-            console.log("hey")
             // throws card back into deck on icon click;
             stack.getCard(document.getElementById(value)).throwIn(1,1);
             // TODO: figure out how to put card on top of deck-- currently places card in-deck based on original DOM order
