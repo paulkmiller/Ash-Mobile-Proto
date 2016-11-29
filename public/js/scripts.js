@@ -75,6 +75,7 @@ $(function() {
       return Math.min(Math.abs(offset) / (element.offsetWidth / ((1+5*.65)/2)), 1); // Fix dropout distance by dividing by 2
     }
   };
+
   var stack = gajus.Swing.Stack(config);
 
   // revert the ul li order since Swing displays them last to first
@@ -133,10 +134,10 @@ $(function() {
 
   // TODO: Turn Anonymous function into named function for performance boost
   $(document).on('click', '.listings li .info', function(e) {
-    $listings = $('.listings');
+    $listings     = $('.listings');
     $listingsCard = $('.listings li.top');
-    $table = $('table');
-    $footer = $('footer');
+    $table        = $('.listings li.top table');
+    $footer       = $('.listings li.top footer');
 
     // condition ? value-if-true : value-if-fale
 
@@ -161,11 +162,10 @@ $(function() {
     return false
   });
 
-  $(document).on('click', '.listings li.top:eq(0)', function(target, e) {
-
+  $(document).on('click', '.listings li.top', function(target, e) {
     $this   = $(this);
-    $table   = $('table');
-    $footer = $('footer');
+    $table  = $('.top table');
+    $footer = $('.top footer');
 
     $this.toggleClass('expanded');
     $table.toggleClass('show');
