@@ -31,7 +31,9 @@ vienna
 
 ---
 
+#### There are only mobile views. Either shrink your window or turn on the Mobile Emulator in Chrome Dev Tools
 
+---
 ## Get started
 
 ```
@@ -49,8 +51,6 @@ sass --watch scss:css
 ```
 Visit localhost:9292
 ```
-
-There are only mobile views. Either shrink your window or turn on the Mobile Emulator in Chrome Dev Tools
 ---
 
 
