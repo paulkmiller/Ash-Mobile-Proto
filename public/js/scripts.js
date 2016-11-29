@@ -162,6 +162,7 @@ $(function() {
   });
 
   $(document).on('click', '.listings li.top:eq(0)', function(target, e) {
+
     $this   = $(this);
     $table   = $('table');
     $footer = $('footer');
@@ -169,6 +170,7 @@ $(function() {
     $this.toggleClass('expanded');
     $table.toggleClass('show');
     $footer.toggleClass('show');
+
 
     if ($this.hasClass('expanded')) {
       $this.addClass('expanded');
