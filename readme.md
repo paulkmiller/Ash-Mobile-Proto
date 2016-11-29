@@ -4,6 +4,8 @@ Card Swiping + Mapbox Demo
 
 In this project, I will look at the compatability of using the [Swing.js](https://github.com/gajus/swing) library in conjunction with [Mapbox-Gl-JS](https://www.mapbox.com/mapbox-gl-js/api/)
 
+[View the Project Live](https://paulkmiller.github.io/Ash-Mobile-Proto/public/index.html)
+
 
 ## Environment
 
