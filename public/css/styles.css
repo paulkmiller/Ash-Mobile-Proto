@@ -238,7 +238,7 @@ body {
         margin-top: -280px; }
     .viewport .listings .full {
       height: 80vh;
-      width: 98vw;
+      width: 100vw;
       -webkit-transform: translateY(-80%) !important;
       transform: translateY(-80%) !important; }
     .viewport .listings .card-content {

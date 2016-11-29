@@ -130,41 +130,33 @@ $(function() {
     map.flyTo(listings[$topCard.attr("id")]);
   }
 
+
+  // TODO: Prevent "exandded" from being toggled when listings-full is active
   $(document).on('click', '.listings li .info', function(e) {
-    e.preventDefault();
-    var listings = $('.listings');
-    var listingsCard = $('.listings li.top');
+    $listings = $('.listings');
+    $listingsCard = $('.listings li.top');
+    $table = $('table');
+    $footer = $('footer');
 
-    listings.toggleClass('listings-full');
-    listingsCard.toggleClass('full');
+    // condition ? value-if-true : value-if-fale
+    
+    // if ($('.viewport .listings').has('.listings-full')) { something } else { something }
 
-    if (listings.hasClass('listings-full')) {
-      listings.addClass('listings-full');
-      listingsCard.addClass('full');
-    } else {
-      listings.removeClass('listings-full');
-      listingsCard.removeClass('full');
-    }
+    $listings.toggleClass('listings-full');
+    $listingsCard.toggleClass('full expanded');
+    $table.toggleClass('show');
+    $footer.toggleClass('show');
+
     return false
   });
 
   $(document).on('click', '.listings li.top', function(target, e) {
     $this   = $(this);
-    $info   = $('table');
+    $table   = $('table');
     $footer = $('footer');
 
     $this.toggleClass('expanded');
-    $info.toggleClass('show');
+    $table.toggleClass('show');
     $footer.toggleClass('show');
-
-    if ($this.hasClass('expanded')) {
-      $this.addClass('expanded');
-      $info.addClass('show');
-      $footer.addClass('show');
-    } else {
-      $this.removeClass('expanded');
-      $info.removeClass('show');
-      $footer.removeClass('show');
-    }
   });
 });
