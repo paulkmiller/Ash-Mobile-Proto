@@ -131,7 +131,7 @@ $(function() {
   }
 
 
-  // TODO: Prevent "exandded" from being toggled when listings-full is active
+  // TODO: Holy fuck so many selectors, send help and towels
   $(document).on('click', '.listings li .info', function(e) {
     $listings = $('.listings');
     $listingsCard = $('.listings li.top');
@@ -139,7 +139,7 @@ $(function() {
     $footer = $('footer');
 
     // condition ? value-if-true : value-if-fale
-    
+
     // if ($('.viewport .listings').has('.listings-full')) { something } else { something }
 
     $listings.toggleClass('listings-full');
@@ -147,6 +147,17 @@ $(function() {
     $table.toggleClass('show');
     $footer.toggleClass('show');
 
+    if ($listings.hasClass('listings-full')) {
+      $listings.addClass('listings-full');
+      $listingsCard.addClass('full expanded');
+      $table.addClass('show');
+      $footer.addClass('show');
+    } else {
+      $listings.removeClass('listings-full');
+      $listingsCard.removeClass('full');
+      $table.removeClass('show');
+      $footer.removeClass('show');
+    }
     return false
   });
 
@@ -158,5 +169,15 @@ $(function() {
     $this.toggleClass('expanded');
     $table.toggleClass('show');
     $footer.toggleClass('show');
+
+    if ($this.hasClass('expanded')) {
+      $this.addClass('expanded');
+      $table.addClass('show');
+      $footer.addClass('show');
+    } else {
+      $this.removeClass('expanded');
+      $table.removeClass('show');
+      $footer.removeClass('show');
+    }
   });
 });
