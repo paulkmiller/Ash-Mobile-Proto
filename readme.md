@@ -67,6 +67,7 @@ Visit localhost:9292
 
 #### Potential Alternatives
 - [PageSwitch](https://github.com/qiqiboy/pageSwitch)
+- [Hammer.js](http://hammerjs.github.io/0)
 
 ---
 
