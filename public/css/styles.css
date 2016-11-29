@@ -235,7 +235,7 @@ body {
       transform: translateY(-60%) !important; }
       .viewport .listings .expanded .card-content {
         height: 200px;
-        margin-top: -280px; }
+        margin-top: -35vh; }
     .viewport .listings .full {
       height: 90vh;
       width: 100vw;
@@ -263,8 +263,8 @@ body {
         color: #fff;
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
       .viewport .listings .card-content .extra-info {
-        margin-top: 10px;
-        height: 30vh;
+        margin-top: 5px;
+        height: 32vh;
         overflow: scroll; }
     .viewport .listings section {
       line-height: 25px;
