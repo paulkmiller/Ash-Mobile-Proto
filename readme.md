@@ -50,7 +50,7 @@ sass --watch scss:css
 Visit localhost:9292
 ```
 
-There are only mobile views-- this will look like garbage on Desktop resolutions. Either shrink your window size or turn on the mobile emulator in Chrome Dev Tools and set to a phone size of your choice
+There are only mobile views. Either shrink your window or turn on the Mobile Emulator in Chrome Dev Tools
 ---
 
 
