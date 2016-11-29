@@ -18,8 +18,9 @@ vienna
 #### To-Do's
 + Increase cross-browser support, specifically for animations on Safari
 + Change active listing-icon to ```#03a9f4``` on Swipe
-+ Build "full-page" view, only available after card has been expanded
-+ On clicking a marker, have its corresponding card returned-- See [Mapbox-GL-JS Listings Demo](https://www.mapbox.com/help/building-a-store-locator/) for similar behavior
++ ~~Build "full-page" view, only available after card has been expanded~~
++ ~~On clicking a marker, have its corresponding card returned-- See [Mapbox-GL-JS Listings Demo](https://www.mapbox.com/help/building-a-store-locator/) for similar behavior~~
++ Have returned card go to top of deck
 + Fix janky expansion animations
 + Improve animation FPS on mobile will require ancillary research into FPS boosting techniques
 + Write JS for ```swiping up as "Yes"``` and ```swiping down as "No"```

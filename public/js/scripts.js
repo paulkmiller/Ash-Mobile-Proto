@@ -131,7 +131,7 @@ $(function() {
   }
 
 
-  // TODO: Holy fuck so many selectors, send help and towels
+  // TODO: Turn Anonymous function into named function for performance boost
   $(document).on('click', '.listings li .info', function(e) {
     $listings = $('.listings');
     $listingsCard = $('.listings li.top');
@@ -140,7 +140,7 @@ $(function() {
 
     // condition ? value-if-true : value-if-fale
 
-    // if ($('.viewport .listings').has('.listings-full')) { something } else { something }
+    // if ($('.viewport .listings').has('.listings-full')) { keep '.expanded' from being removed } else { keep keeping '.expanded' from being removed }
 
     $listings.toggleClass('listings-full');
     $listingsCard.toggleClass('full expanded');
@@ -161,7 +161,7 @@ $(function() {
     return false
   });
 
-  $(document).on('click', '.listings li.top', function(target, e) {
+  $(document).on('click', '.listings li.top:eq(0)', function(target, e) {
     $this   = $(this);
     $table   = $('table');
     $footer = $('footer');
