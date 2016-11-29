@@ -150,6 +150,8 @@ $(function() {
     }
   });
 
+  // { html: "", on_top: false, in_stack: false, throw_direction: null, card: stack.createCard(html),addCard "", addCardToTop: function() { }}
+
   // TODO: Turn Anonymous function into named function for performance boost
   $(document).on('click', '.listings li .info', function(e) {
     $listings     = $('.listings');
