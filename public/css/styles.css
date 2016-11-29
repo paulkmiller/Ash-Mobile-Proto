@@ -265,6 +265,7 @@ body {
       .viewport .listings .card-content .extra-info {
         margin-top: 10px;
         overflow: scroll;
+        -webkit-overflow-scrolling: touch;
         height: 30vh; }
     .viewport .listings section {
       line-height: 25px;
