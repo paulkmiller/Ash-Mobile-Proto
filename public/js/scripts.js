@@ -34,14 +34,14 @@ $(function() {
           "properties": {
               "listing_id":  listing_id,
               "description": description,
-              "iconSize":    [20, 20],
-              "icon":        "circle"
-          },
+              "icon": "circle",
+              "intensity": 0
+            },
           "geometry": {
-              "type":        "Point",
+              "type": "Point",
               "coordinates": [long, lat]
           }
-      };
+      }
   }
 
   $.each(listingData, function(index, listing_hash) {
@@ -63,9 +63,16 @@ $(function() {
           "id": "listings",
           "type": "symbol",
           "source": "listings",
-          "layout": {
-              "icon-image": "{icon}-15",
-              "icon-allow-overlap": true
+          "type": "circle",
+          "paint": {
+              "circle-radius": 6,
+              "circle-color": {
+                "property": "intensity",
+                "stops": [
+                  [0, '#656060'],
+                  [100, '#288cb6']
+              ]
+            }
           }
       });
   });
@@ -91,6 +98,7 @@ $(function() {
     var features = map.queryRenderedFeatures(e.point, { layers: ['listings'] });
     if (!features.length) { return; };
     feature = features[0].properties;
+    // feature[]
 
     clicked_listing_id = feature.listing_id;
     card_id = $('.listings li').map(function(){ return $(this).attr('id') });
